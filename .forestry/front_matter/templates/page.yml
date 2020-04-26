@@ -105,6 +105,7 @@ fields:
   config:
     required: true
 pages:
+- src/blog/hello-world.md
 - src/pages/aliquam-ultricies.md
 - src/pages/diam-sed-interdum.md
 - src/pages/enim-est-aenean.md

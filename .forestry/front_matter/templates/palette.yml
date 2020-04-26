@@ -1,14 +1,13 @@
 ---
 label: Palette
 hide_body: true
-is_partial: true
 fields:
-  - type: field_group
-    name: sass
-    label: Sass
-    fields:
-      - type: color
-        name: color
-        label: Color
-        config:
-          color_format: Hex
+- type: field_group
+  name: sass
+  label: Sass
+  fields:
+  - type: color
+    name: color
+    label: Color
+    config:
+      color_format: Hex

@@ -1,61 +1,60 @@
 ---
 label: Config
 hide_body: true
-is_partial: false
 fields:
-  - type: text
-    name: title
-    label: Title
-    description: Site title
-    config:
-      required: true
-  - type: select
-    name: palette
-    label: Color Palette
-    default: blue
-    config:
-      required: true
-      source:
-        type: custom
-      options:
-        - blue
-        - cyan
-        - green
-        - red
+- type: text
+  name: title
+  label: Title
+  description: Site title
+  config:
+    required: true
+- type: select
+  name: palette
+  label: Color Palette
+  default: blue
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - blue
+    - cyan
+    - green
+    - red
+- type: field_group
+  name: palettes
+  label: Palettes
+  hidden: true
+  fields:
   - type: field_group
-    name: palettes
-    label: Palettes
-    hidden: true
+    name: blue
+    label: Blue
     fields:
-      - type: field_group
-        name: blue
-        label: Blue
-        fields:
-          - type: include
-            name: include_palette
-            label: Palette
-            template: palette
-      - type: field_group
-        name: cyan
-        label: Cyan
-        fields:
-          - type: include
-            name: include_palette
-            label: Palette
-            template: palette
-      - type: field_group
-        name: green
-        label: Green
-        fields:
-          - type: include
-            name: include_palette
-            label: Palette
-            template: palette
-      - type: field_group
-        name: red
-        label: Red
-        fields:
-          - type: include
-            name: include_palette
-            label: Palette
-            template: palette
+    - type: include
+      name: include_palette
+      label: Palette
+      template: palette
+  - type: field_group
+    name: cyan
+    label: Cyan
+    fields:
+    - type: include
+      name: include_palette
+      label: Palette
+      template: palette
+  - type: field_group
+    name: green
+    label: Green
+    fields:
+    - type: include
+      name: include_palette
+      label: Palette
+      template: palette
+  - type: field_group
+    name: red
+    label: Red
+    fields:
+    - type: include
+      name: include_palette
+      label: Palette
+      template: palette

@@ -1,98 +1,96 @@
 ---
 label: Home
 hide_body: true
-is_partial: false
 fields:
+- type: text
+  name: title
+  label: Page Title
+  config:
+    required: true
+- type: field_group
+  name: banner
+  label: Page Banner
+  description: The banner displayed at the top of the landing page
+  fields:
   - type: text
     name: title
-    label: Page Title
+    label: Banner Title
+    description: The first line of text displayed in the page banner
     config:
       required: true
-  - type: field_group
-    name: banner
-    label: Page Banner
-    description: The banner displayed at the top of the landing page
-    fields:
-      - type: text
-        name: title
-        label: Banner Title
-        description: The first line of text displayed in the page banner
-        config:
-          required: true
-      - type: textarea
-        name: subtitle
-        label: Banner Subtitle
-        description: The text displayed below the banner title
-        config:
-          wysiwyg: true
-          schema:
-            format: markdown
-      - type: boolean
-        name: show_scroll_button
-        label: Show Scroll Button
-        description: >-
-          Displays a button at the bottom of the page banner that scrolls down
-          to the page content when clicked
-        default: false
-  - type: blocks
-    name: sections
-    label: Sections
-    description: Home sections
-    template_types:
-      - icons
-      - highlights
-      - features
-      - spotlights
-  - type: field_group
-    name: cta
-    label: CTA
-    description: The CTA displayed at the bottom of the landing page
-    fields:
-      - type: boolean
-        name: enabled
-        label: Enabled
-        description: displays the CTA at the bottom of the landing page
-        default: false
-      - type: text
-        name: title
-        label: CTA Title
-        description: the first line of text displayed in the CTA
-      - type: textarea
-        name: text
-        label: CTA Text
-        description: The text displayed below the CTA title
-        config:
-          wysiwyg: true
-          schema:
-            format: markdown
-      - type: select
-        name: background_style
-        label: Background Style
-        description: Controls the CTA background color
-        default: style1
-        config:
-          source:
-            type: custom
-          options:
-            - style1
-            - style2
-            - style3
-      - type: field_group_list
-        name: actions
-        label: CTA Action Buttons
-        fields:
-          - type: include
-            name: include_action
-            label: Action
-            template: action
-        config:
-          labelField: label
+  - type: textarea
+    name: subtitle
+    label: Banner Subtitle
+    description: The text displayed below the banner title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: boolean
+    name: show_scroll_button
+    label: Show Scroll Button
+    description: Displays a button at the bottom of the page banner that scrolls down
+      to the page content when clicked
+    default: false
+- type: blocks
+  name: sections
+  label: Sections
+  description: Home sections
+  template_types:
+  - icons
+  - highlights
+  - features
+  - spotlights
+- type: field_group
+  name: cta
+  label: CTA
+  description: The CTA displayed at the bottom of the landing page
+  fields:
+  - type: boolean
+    name: enabled
+    label: Enabled
+    description: displays the CTA at the bottom of the landing page
+    default: false
   - type: text
-    name: template
-    label: Template
-    hidden: true
-    default: home
+    name: title
+    label: CTA Title
+    description: the first line of text displayed in the CTA
+  - type: textarea
+    name: text
+    label: CTA Text
+    description: The text displayed below the CTA title
     config:
-      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: select
+    name: background_style
+    label: Background Style
+    description: Controls the CTA background color
+    default: style1
+    config:
+      source:
+        type: custom
+      options:
+      - style1
+      - style2
+      - style3
+  - type: field_group_list
+    name: actions
+    label: CTA Action Buttons
+    fields:
+    - type: include
+      name: include_action
+      label: Action
+      template: action
+    config:
+      labelField: label
+- type: text
+  name: template
+  label: Template
+  hidden: true
+  default: home
+  config:
+    required: true
 pages:
-  - src/pages/index.md
+- src/pages/index.md

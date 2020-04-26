@@ -1,57 +1,55 @@
 ---
 label: Icons Section
 hide_body: true
-is_partial: true
 display_field: title
 fields:
+- type: text
+  name: title
+  label: Title
+  description: The text displayed at the top of the section (Also used by the CMS,
+    even if no title is displayed in the section)
+  default: Icons Section
+  config:
+    required: true
+- type: textarea
+  name: subtitle
+  label: Section Subtitle
+  description: The text displayed below the section title
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: text
+  name: section_id
+  label: Section Id
+  default: one
+  config:
+    required: true
+- type: field_group_list
+  name: icons
+  label: Icons
+  description: The icons displayed along the bottom of the section
+  fields:
   - type: text
-    name: title
-    label: Title
-    description: >-
-      The text displayed at the top of the section (Also used by the CMS, even
-      if no title is displayed in the section)
-    default: Icons Section
+    name: icon
+    label: Icon
+    description: Font Awesome icon
     config:
       required: true
-  - type: textarea
-    name: subtitle
-    label: Section Subtitle
-    description: The text displayed below the section title
-    config:
-      wysiwyg: true
-      schema:
-        format: markdown
-  - type: text
-    name: section_id
-    label: Section Id
-    default: one
-    config:
-      required: true
-  - type: field_group_list
-    name: icons
-    label: Icons
-    description: The icons displayed along the bottom of the section
-    fields:
-      - type: text
-        name: icon
-        label: Icon
-        description: Font Awesome icon
-        config:
-          required: true
-    config:
-      labelField: icon
-  - type: text
-    name: component
-    label: Component
-    hidden: true
-    config:
-      required: true
-    default: Icons
-  - type: text
-    name: type
-    label: Reference Type Name
-    description: 'Name of the Stackbit object model, used by fields of type reference'
-    hidden: true
-    default: icons
-    config:
-      required: true
+  config:
+    labelField: icon
+- type: text
+  name: component
+  label: Component
+  hidden: true
+  config:
+    required: true
+  default: Icons
+- type: text
+  name: type
+  label: Reference Type Name
+  description: Name of the Stackbit object model, used by fields of type reference
+  hidden: true
+  default: icons
+  config:
+    required: true

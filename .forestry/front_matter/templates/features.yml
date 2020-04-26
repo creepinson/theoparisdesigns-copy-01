@@ -1,0 +1,79 @@
+---
+label: Features Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: >-
+      The text displayed at the top of the section (Also used by the CMS, even
+      if no title is displayed in the section)
+    default: Features Section
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    description: the text displayed below the page title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: section_id
+    label: Section Id
+    default: three
+    config:
+      required: true
+  - type: field_group_list
+    name: features
+    label: Features
+    description: A list of features to be displayed in the section
+    fields:
+      - type: text
+        name: title
+        label: Feature Title
+        description: The first line of text displayed in the feature
+        config:
+          required: true
+      - type: textarea
+        name: text
+        label: Feature Text
+        description: The text displayed below the feature title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: text
+        name: icon
+        label: Feature Icon
+        description: (Font Awesome icon) The icon displayed above the feature title
+    config:
+      labelField: title
+  - type: field_group_list
+    name: actions
+    label: Section Action Buttons
+    fields:
+      - type: include
+        name: include_action
+        label: Action
+        template: action
+    config:
+      labelField: label
+  - type: text
+    name: component
+    label: Component
+    hidden: true
+    config:
+      required: true
+    default: Features
+  - type: text
+    name: type
+    label: Reference Type Name
+    description: 'Name of the Stackbit object model, used by fields of type reference'
+    hidden: true
+    default: features
+    config:
+      required: true

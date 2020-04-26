@@ -1,0 +1,117 @@
+---
+label: Page
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    description: The bold first line of text in the page content area
+    config:
+      required: true
+  - type: boolean
+    name: display_header
+    label: Display Page Header
+    description: Displays the site title at the top of the page
+    default: false
+  - type: textarea
+    name: subtitle
+    label: Page Subtitle
+    description: The text displayed below the page title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: file
+    name: content_img
+    label: Content Image
+    description: The image displayed below the page subtitle
+  - type: field_group
+    name: home
+    label: Home Sections
+    description: >-
+      Configures the page sections for the home highlights and spotlights
+      sections
+    fields:
+      - type: field_group
+        name: highlights
+        label: Highlights Section
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: displays the page highlight in the home highlights section
+            default: false
+          - type: number
+            name: weight
+            label: Weight
+            description: The index of the page highlight in the home highlights section
+            default: 1
+            config:
+              required: true
+          - type: textarea
+            name: excerpt
+            label: Page Excerpt
+            description: The excerpt displayed in the home highlights section
+            config:
+              wysiwyg: true
+              schema:
+                format: markdown
+          - type: field_group
+            name: home_img
+            label: Home Highlight Image
+            description: The image displayed in the home highlights section
+            fields:
+              - type: file
+                name: path
+                label: Image
+              - type: text
+                name: data_position
+                label: Data Position
+                description: >-
+                  The position of the image in its container (center, center
+                  left, right, etc.)
+                default: center right
+      - type: field_group
+        name: spotlights
+        label: Spotlights Section
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: displays the page highlight in the home spotlights section
+            default: false
+          - type: number
+            name: weight
+            label: Weight
+            description: The index of the page highlight in the home spotlights section
+            default: 1
+            config:
+              required: true
+          - type: textarea
+            name: excerpt
+            label: Page Excerpt
+            description: The excerpt displayed in the home spotlights section
+            config:
+              wysiwyg: true
+              schema:
+                format: markdown
+          - type: file
+            name: home_img_path
+            label: Home Spotlight Image
+            description: The image displayed in the home spotlights section
+  - type: text
+    name: template
+    label: Template
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - src/pages/aliquam-ultricies.md
+  - src/pages/diam-sed-interdum.md
+  - src/pages/enim-est-aenean.md
+  - src/pages/generic.md
+  - src/pages/justo-aliquet-magna.md
+  - src/pages/magna-tempus-nisl.md
+  - src/pages/neque-donec-lorem.md
+  - src/pages/vitae-sed-mattis.md

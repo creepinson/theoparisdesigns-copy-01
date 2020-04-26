@@ -1,0 +1,19 @@
+---
+label: Elements
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: text
+    name: template
+    label: Template
+    hidden: true
+    default: elements
+    config:
+      required: true
+pages:
+  - src/pages/elements.md
